@@ -1,4 +1,5 @@
 using AviationWebApi.DatabaseContext;
+using AviationWebApi.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,8 +35,8 @@ namespace Aviation
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Aviation", Version = "v1" });
             });
-            services.AddDbContext<AviationContext>(option =>
-option.UseSqlServer(Configuration.GetConnectionString("Aviation")));
+            services.AddDbContext<AviationContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Aviation")));
+            services.AddScoped<AirportRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

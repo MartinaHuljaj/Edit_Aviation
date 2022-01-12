@@ -1,4 +1,5 @@
 using AviationBlazorServer.Data;
+using AviationBlazorServer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,9 @@ namespace AviationBlazorServer
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddHttpClient();
+            services.AddScoped<AirportService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,43 @@
+﻿@page "/Airports"
+@inject AirportService _airportService;
+<h3>AirportList</h3>
+@code {
+    private List<Airport> Airports { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        Airports = await _airportService.GetAirports();
+
+
+    }
+}
+@if (Airports == null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var airport in Airports)
+            {
+                <tr>
+                    <td>@airport.Id</td>
+                    <td>@airport.Name</td>
+                    <td>@airport.Address</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
