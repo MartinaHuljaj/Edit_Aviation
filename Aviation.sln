@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviationWebApi", "Aviation\AviationWebApi.csproj", "{36B50BE1-97B7-4AAD-B3BA-B14665121A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AviationWebApi", "Aviation\AviationWebApi.csproj", "{36B50BE1-97B7-4AAD-B3BA-B14665121A0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{D41D03D1-2423-4120-B62D-6B7E8DEE9B03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModel", "DomainModel\DomainModel.csproj", "{D41D03D1-2423-4120-B62D-6B7E8DEE9B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviationBlazorServer", "AviationBlazorServer\AviationBlazorServer.csproj", "{24DEA79F-14D8-4F37-BDA2-4021BDDE06C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D41D03D1-2423-4120-B62D-6B7E8DEE9B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D41D03D1-2423-4120-B62D-6B7E8DEE9B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D41D03D1-2423-4120-B62D-6B7E8DEE9B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DEA79F-14D8-4F37-BDA2-4021BDDE06C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DEA79F-14D8-4F37-BDA2-4021BDDE06C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DEA79F-14D8-4F37-BDA2-4021BDDE06C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DEA79F-14D8-4F37-BDA2-4021BDDE06C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
