@@ -36,7 +36,9 @@ namespace Aviation
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Aviation", Version = "v1" });
             });
             services.AddDbContext<AviationContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Aviation")));
+            services.AddDbContext<CountryContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Country")));
             services.AddScoped<AirportRepository>();
+            services.AddScoped<CountryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
