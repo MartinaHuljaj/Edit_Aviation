@@ -50,5 +50,37 @@ namespace AviationWebApi.Controllers
             }
         }
 
+        [HttpPut]
+        public IActionResult UpdateAirport([FromBody] Airport airport)
+        {
+            if (airport == null)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                _airportRepository.UpdateAirport(airport);
+                return Ok();
+            }
+            catch (System.Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpGet("{airportId:int}")]
+        public IActionResult GetAirport(int airportId)
+        {
+            try
+            {
+                return Ok(_airportRepository.GetAirport(airportId));
+            }
+            catch (System.Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
     }
 }

@@ -38,6 +38,12 @@ else
                     <td>@airport.Id</td>
                     <td>@airport.Name</td>
                     <td>@airport.Address</td>
+                    <td>
+                        <a href="/editAirport/@airport.Id" class="btn btn-primary">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+
+                    </td>
 
                 </tr>
             }
@@ -48,6 +54,7 @@ else
         <span class="oi oi-plus"></span>
         Add Airport
     </button>
+
 }
 
 

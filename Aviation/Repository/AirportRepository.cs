@@ -26,6 +26,21 @@ namespace AviationWebApi.Repository
             _aviationContext.SaveChanges();
 
         }
+        public void UpdateAirport(Airport airport)
+        {
+            var airportForUpdate = GetAirport(airport.Id);
+            if (airportForUpdate != null)
+            {
+                airportForUpdate.Name = airport.Name;
+                airportForUpdate.Address = airport.Address;
+                _aviationContext.SaveChanges();
+            }
+        }
+
+        public Airport GetAirport(int airportId)
+        {
+            return _aviationContext.Airports.FirstOrDefault(airport => airport.Id.Equals(airportId));
+        }
 
     }
 

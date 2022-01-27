@@ -30,5 +30,19 @@ namespace AviationBlazorServer.Services
             await _httpClient.SendAsync(request);
 
         }
+
+        public async Task<Airport> GetAirportAsync(int airportId)
+        {
+            return await _httpClient.GetFromJsonAsync<Airport>($"{BaseApiUrl}/{airportId}");
+        }
+
+        public async Task UpdateAirportAsync(Airport airport)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Put, BaseApiUrl);
+            request.Content = new StringContent(JsonSerializer.Serialize(airport), Encoding.UTF8,
+            "application/json");
+            await _httpClient.SendAsync(request);
+        }
+
     }
 }
