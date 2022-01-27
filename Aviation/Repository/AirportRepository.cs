@@ -20,7 +20,15 @@ namespace AviationWebApi.Repository
         {
             return _aviationContext.Airports.ToList();
         }
+        public void InsertAirport(Airport airport)
+        {
+            _aviationContext.Airports.Add(airport);
+            _aviationContext.SaveChanges();
+
+        }
+
     }
+
 
 
 

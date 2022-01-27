@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AviationWebApi", "Aviation\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModel", "DomainModel\DomainModel.csproj", "{D41D03D1-2423-4120-B62D-6B7E8DEE9B03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviationBlazorServer", "AviationBlazorServer\AviationBlazorServer.csproj", "{24DEA79F-14D8-4F37-BDA2-4021BDDE06C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AviationBlazorServer", "AviationBlazorServer\AviationBlazorServer.csproj", "{24DEA79F-14D8-4F37-BDA2-4021BDDE06C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

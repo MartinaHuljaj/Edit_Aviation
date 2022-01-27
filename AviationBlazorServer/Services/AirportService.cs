@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace AviationBlazorServer.Services
@@ -19,6 +21,13 @@ namespace AviationBlazorServer.Services
         public async Task<List<Airport>> GetAirports()
         {
             return await _httpClient.GetFromJsonAsync<List<Airport>>(BaseApiUrl);
+
+        }
+        public async Task AddAirportAsync(Airport airport)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post, BaseApiUrl);
+            request.Content = new StringContent(JsonSerializer.Serialize(airport), Encoding.UTF8,"application/json");
+            await _httpClient.SendAsync(request);
 
         }
     }

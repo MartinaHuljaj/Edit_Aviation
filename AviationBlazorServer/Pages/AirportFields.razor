@@ -1,0 +1,13 @@
+﻿<h3>AirportFields</h3>
+<div class="airportFields">
+    <label for="airportName">Airport Name</label>
+    <InputText id="airportName" class="form-control" @bind-Value="@Airport.Name"></InputText>
+    <label for="airportAddress">Airport Address</label>
+    <InputText id="airportAddress" class="form-control" @bind-Value="@Airport.Address"></InputText>
+</div>
+
+
+@code {
+    [Parameter]
+    public Airport Airport { get; set; }
+}

@@ -1,5 +1,6 @@
 ﻿@page "/Airports"
 @inject AirportService _airportService;
+@inject NavigationManager _navigationManager; 
 <h3>AirportList</h3>
 @code {
     private List<Airport> Airports { get; set; }
@@ -9,6 +10,11 @@
 
 
     }
+    private void OpenAddAirportPage()
+    {
+        _navigationManager.NavigateTo("/addAirport");
+    }
+
 }
 @if (Airports == null)
 {
@@ -37,6 +43,11 @@ else
             }
         </tbody>
     </table>
+
+    <button type="button" @onclick="OpenAddAirportPage">
+        <span class="oi oi-plus"></span>
+        Add Airport
+    </button>
 }
 
 

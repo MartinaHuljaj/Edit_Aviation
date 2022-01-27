@@ -1,4 +1,5 @@
 ﻿using AviationWebApi.Repository;
+using DomainModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,6 +27,24 @@ namespace AviationWebApi.Controllers
                 return Ok(airports);
             }
             catch (System.Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult AddAirport([FromBody] Airport airport)
+        {
+            if (airport == null)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                _airportRepository.InsertAirport(airport);
+                return Ok();
+            }
+            catch(System.Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }

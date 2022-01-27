@@ -1,0 +1,35 @@
+﻿@page "/addAirport"
+@inject AirportService _airportService;
+@inject NavigationManager _navigationManager;
+<h3>AddAirport</h3>
+
+<EditForm Model="@Airport" OnValidSubmit="@AddAirportAsync">
+    <AirportFields Airport="@Airport"></AirportFields>
+    <button type="submit" class="btn btn-primary">
+        <span class="oi-pencil"></span>
+        Add Airport
+    </button>
+
+    <button type="button" @onclick="Close">
+        <span class="oi oi-media-skip-backward"></span>
+        Close
+    </button>
+</EditForm>
+@code {
+    public Airport Airport { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        Airport = new Airport();
+    }
+
+    private async Task AddAirportAsync()
+    {
+        await _airportService.AddAirportAsync(Airport);
+        Close();
+    }
+    private void Close()
+    {
+        _navigationManager.NavigateTo("/");
+    }
+
+}
