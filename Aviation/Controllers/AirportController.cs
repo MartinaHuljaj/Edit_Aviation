@@ -82,5 +82,20 @@ namespace AviationWebApi.Controllers
             }
         }
 
+        [HttpDelete("{airportId:int}")]
+
+        public IActionResult DeleteAirport(int airportId)
+        {
+            try
+            {
+                _airportRepository.DeleteAirport(airportId);
+                return Ok();
+            }
+            catch (System.Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
     }
 }

@@ -42,6 +42,16 @@ namespace AviationWebApi.Repository
             return _aviationContext.Airports.FirstOrDefault(airport => airport.Id.Equals(airportId));
         }
 
+        public void DeleteAirport(int airportId)
+        {
+            var airportForDelete = GetAirport(airportId);
+            if (airportForDelete != null)
+            {
+                _aviationContext.Airports.Remove(airportForDelete);
+                _aviationContext.SaveChanges();
+            }
+        }
+
     }
 
 

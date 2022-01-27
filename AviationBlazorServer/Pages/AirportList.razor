@@ -14,7 +14,14 @@
     {
         _navigationManager.NavigateTo("/addAirport");
     }
+    private async Task DeleteAirportAsync(int airportId)
+    {
+        await _airportService.DeleteAirportAsync(airportId);
+        Airports = await _airportService.GetAirports();
+    }
 
+
+
 }
 @if (Airports == null)
 {
@@ -42,6 +49,9 @@ else
                         <a href="/editAirport/@airport.Id" class="btn btn-primary">
                             <span class="oi oi-pencil"></span>
                         </a>
+                        <button type="button" @onclick="() => DeleteAirportAsync(airport.Id)">
+                            <span class="oi oi-delete"></span>
+                        </button>
 
                     </td>
 

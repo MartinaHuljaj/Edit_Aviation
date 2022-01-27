@@ -44,5 +44,12 @@ namespace AviationBlazorServer.Services
             await _httpClient.SendAsync(request);
         }
 
+        public async Task DeleteAirportAsync(int airportId)
+        {
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, $"{BaseApiUrl}/{airportId}");
+            await _httpClient.SendAsync(httpRequest);
+
+        }
+
     }
 }
